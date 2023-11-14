@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200;300&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="<c:url value='../static/css/style.css' />">
+    <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
 
     <title>Cursos - JobConnect</title>
@@ -21,7 +21,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-light text-center">
             <div class="container-fluid bg-nav box">
-                <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" src="../img/2.png"
+                <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" src="../static/img/2.png"
                         alt="logo do projeto" width="150" height="100"></a>
                 <button class="navbar-toggler bg-light text-success" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -31,16 +31,16 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto me-3 mb-2 mb-lg-0 fs-5 gap-4  ">
                         <li class="nav-item">
-                            <a class="nav-link t " href="../html/homelogado.html">Home</a>
+                            <a class="nav-link t " href="../templates/homelogado.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link t active" href="../html/cursos.html"> Cursos </a>
+                            <a class="nav-link t active" href="../templates/cursos.html"> Cursos </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link t" href="../html/emprego.html"> Vagas </a>
+                            <a class="nav-link t" href="../templates/emprego.html"> Vagas </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link t" href="../html/contatos.html"> Contatos </a>
+                            <a class="nav-link t" href="../templates/contatos.html"> Contatos </a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
     <main class="container d-flex-columns">
         <section class="row row-cols-lg-2 p-3 row-cols-md-2 row-cols-sm-1 row-cols-1 m-3 border-card" id="frontEnd">
             <div class="col">
-                <img src="../img/frontEnd3.jpeg" alt="" class="img-fluid">
+                <img src="../static/img/frontEnd3.jpeg" alt="" class="img-fluid">
             </div>
             <div class="col">
                 <h3 class="m-3">Front End</h3>
@@ -133,7 +133,7 @@
 
         <section class="row row-cols-lg-2 p-3 row-cols-md-2 row-cols-sm-1 row-cols-1 m-3 border-card" id="dados">
             <div class="col">
-                <img src="../img/DADOS.jpg" alt="" class="img-fluid">
+                <img src="../static/img/DADOS.jpg" alt="" class="img-fluid">
             </div>
             <div class="col">
                 <h3 class="m-3">Dados</h3>
@@ -205,7 +205,7 @@
 
         <section class="row row-cols-lg-2 p-3 row-cols-md-2 row-cols-sm-1 row-cols-1 m-3 border-card" id="backEnd">
             <div class="col">
-                <img src="../img/FrontBlack.jpeg" alt="" class="img-fluid">
+                <img src="../static/img/FrontBlack.jpeg" alt="" class="img-fluid">
             </div>
             <div class="col">
                 <h3 class="m-3">Back End</h3>
@@ -282,7 +282,7 @@
         <section class="row d-flex-columns row-cols-lg-1 p-3 row-cols-md-1 row-cols-sm-1 row-cols-1 text-center"
             id="videos">
             <div class="container d-flex justify-content-center m-3 gap-3">
-                <img src="../img/frontend.png" class="img-fluid" alt="imagem cabeçalho da sessão front-end"
+                <img src="../static/img/frontend.png" class="img-fluid" alt="imagem cabeçalho da sessão front-end"
                     width="80px">
                 <h4 class="display-6 mt-3">FRONT END</h4>
             </div>
@@ -291,7 +291,7 @@
             <div class="shadow" id="frontEnd">
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2">
                     <div class="col">
-                        <img src="../img/html5-logo.png" alt="logo html5" class="img-fluid" width="200px">
+                        <img src="../static/img/html5-logo.png" alt="logo html5" class="img-fluid" width="200px">
                         <hr>
                         <p>O <b> HTML</b> foi desenvolvido por Tim Berners-Lee para suprir a necessidade de uma
                             linguagem compreendida por diferentes meios de acesso na web. Ele se baseia no conceito de
@@ -300,12 +300,12 @@
                             por diversas versões até se tornar um padrão em 1997, permitindo que a web fosse
                             independente de plataformas e meios de acesso. Em 2004, o desenvolvimento do HTML5 começou,
                             liderado pelo WHATWG, com o objetivo de melhorar a linguagem e torná-la mais compatível com
-                            as necessidades da época.</p>                        
+                            as necessidades da época.</p>
                     </div>
                     <div class="col" id="html">
-                        
-                        <iframe width="100%" height="500px"
-                            src="http://www.youtube.com/embed?listType=playlist&list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o"
+
+                        <iframe id="cursoHTML" width="100%" height="500px"
+                            data="http://www.youtube.com/embed?listType=playlist&list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -316,7 +316,7 @@
                 <hr>
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="css">
                     <div class="col">
-                        <img src="../img/css3.png" alt="logo css3" class="img-fluid" width="100px"><br>
+                        <img src="../static/img/css3.png" alt="logo css3" class="img-fluid" width="100px"><br>
                         <hr>
                         <p>O <b>CSS </b> é uma linguagem utilizada para definir a aparência e o layout de páginas web.
                             ela trabalha em conjunto com o HTML e XML para personalizar cores, tamanhos, bordas e outros
@@ -326,7 +326,7 @@
                     </div>
                     <div class="col">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PL2Fdisxwzt_f5C7Mv0kg1EAHhy2VJLf1c"
+                            data="https://www.youtube.com/embed/videoseries?list=PL2Fdisxwzt_f5C7Mv0kg1EAHhy2VJLf1c"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -336,7 +336,7 @@
                 <hr>
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="javascript">
                     <div class="col">
-                        <img src="../img/javascript.png" alt="logo css3" class="img-fluid" width="150px"><br>
+                        <img src="../static/img/javascript.png" alt="logo css3" class="img-fluid" width="150px"><br>
                         <hr>
                         <p>O <b>JavaScript</b> é uma linguagem de programação fácil de aprender, com uma sintaxe simples
                             e versátil. Ele foi inicialmente criado para implementar interatividade em páginas web, mas
@@ -347,7 +347,7 @@
                     </div>
                     <div class="col">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm"
+                            data="https://www.youtube.com/embed/videoseries?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -355,8 +355,8 @@
                 </div>
             </div>
             <div class="container d-flex justify-content-center gap-3 mt-5 mb-2" id="dados">
-                <img src="../img/bancodedadosverde.jpg" class="img-fluid" alt="imagem cabeçalho da sessão front-end"
-                    width="80px">
+                <img src="../static/img/bancodedadosverde.jpg" class="img-fluid"
+                    alt="imagem cabeçalho da sessão front-end" width="80px">
                 <h4 class="display-6 mt-3">DADOS</h4>
             </div>
 
@@ -364,7 +364,8 @@
             <div class="col shadow mb-5">
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="sql">
                     <div class="col d-flex-columns">
-                        <img src="../img/sql-logo.png" alt="logo html5" class="img-fluid w-30 h-30" width="200px">
+                        <img src="../static/img/sql-logo.png" alt="logo html5" class="img-fluid w-30 h-30"
+                            width="200px">
                         <hr>
                         <p>O <b>SQL (Structured Query Language)</b> é a linguagem padrão usada para interagir com
                             bancos de dados relacionais. É uma linguagem declarativa, o que significa que o usuário
@@ -375,7 +376,7 @@
                     </div>
                     <div class="col">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PLbIBj8vQhvm2WT-pjGS5x7zUzmh4VgvRk"
+                            data="https://www.youtube.com/embed/videoseries?list=PLbIBj8vQhvm2WT-pjGS5x7zUzmh4VgvRk"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -386,7 +387,7 @@
                 <hr>
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="mongoDB">
                     <div class="col">
-                        <img src="../img/mongoDB-logo.png" alt="logo mongoDB" class="img-fluid" width="200px">
+                        <img src="../static/img/mongoDB-logo.png" alt="logo mongoDB" class="img-fluid" width="200px">
                         <hr>
                         <p>O <b>MongoDB</b> é um banco de dados orientado a documentos, que
                             difere dos bancos de dados tradicionais no modelo relacional. Ele lida com documentos em vez
@@ -397,7 +398,7 @@
                     </div>
                     <div class="col" ID="mongoDB">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PLyqlZW5s3wkoMhARQKp3s4YtaeKucb0Xj"
+                            data="https://www.youtube.com/embed/videoseries?list=PLyqlZW5s3wkoMhARQKp3s4YtaeKucb0Xj"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -408,7 +409,7 @@
                 <hr>
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="mariaDB">
                     <div class="col">
-                        <img src="../img/mariaDB-logo.png" alt="logo mariaDB" class="img-fluid" width="200px">
+                        <img src="../static/img/mariaDB-logo.png" alt="logo mariaDB" class="img-fluid" width="200px">
                         <hr>
                         <p> O <b>MariaDB</b> é um banco de dados criado pelos mesmos desenvolvedores do MySQL, sendo
                             conhecido pela sua rapidez, escalabilidade, robustez e capacidade de armazenamento. Sua
@@ -417,7 +418,7 @@
                     </div>
                     <div class="col">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PLfvOpw8k80WqyrR7P7fMNREW2Q82xJlpO"
+                            data="https://www.youtube.com/embed/videoseries?list=PLfvOpw8k80WqyrR7P7fMNREW2Q82xJlpO"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -426,7 +427,7 @@
                 </div>
             </div>
             <div class=" d-flex justify-content-center gap-3 mb-2 ">
-                <img src="../img/icon-back.png" class="img-fluid" alt="imagem cabeçalho da sessão front-end"
+                <img src="../static/img/icon-back.png" class="img-fluid" alt="imagem cabeçalho da sessão front-end"
                     width="80px">
                 <h4 class="display-6 mt-3">Back-End</h4>
             </div>
@@ -435,7 +436,7 @@
             <div class="container shadow" id="backEnd">
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="java">
                     <div class="col">
-                        <img src="../img/javalogo.png" alt="logo java" class="img-fluid" width="200px">
+                        <img src="../static/img/javalogo.png" alt="logo java" class="img-fluid" width="200px">
                         <hr>
                         <p>A linguagem <b>Java</b> é amplamente usada para codificar aplicações Web. É uma escolha
                             popular entre os desenvolvedores há mais de duas décadas, e existem milhões de aplicações
@@ -446,7 +447,7 @@
                             empresarial até aplicações de big data e tecnologias do servidor.</p>
                     </div>
                     <div class="col" id="java">
-                        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/sTX0UEplF54"
+                        <iframe width="100%" height="500px" data="https://www.youtube.com/embed/sTX0UEplF54"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -455,7 +456,7 @@
                 <hr>
                 <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="php">
                     <div class="col">
-                        <img src="../img/php-logo.png" alt="logo java" class="img-fluid w-50">
+                        <img src="../static/img/php-logo.png" alt="logo java" class="img-fluid w-50">
                         <hr>
                         <p>O <b> PHP </b> é uma linguagem de programação que pode ser usada para criar sites dinâmicos e
                             interativos. Ele é especialmente adequado para o desenvolvimento de scripts do lado do
@@ -464,7 +465,7 @@
                     </div>
                     <div class="col">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_"
+                            data="https://www.youtube.com/embed/videoseries?list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -472,9 +473,9 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="c-sharp">
+                <div class="row row-cols-md-1 row-cols-sm-1 row-cols-1 row-cols-lg-2" id="c#">
                     <div class="col">
-                        <img src="../img/csharp-logo.svg" alt="logo c sharp" class="img-fluid img-fluid w-25">
+                        <img src="../static/img/csharp-logo.svg" alt="logo c sharp" class="img-fluid img-fluid w-25">
                         <hr>
                         <p>O <b> C# </b>é uma linguagem de programação moderna e orientada a objeto que permite criar
                             aplicativos seguros e robustos para executar no .NET. Com raízes na família de linguagens C,
@@ -486,7 +487,7 @@
 
                     <div class="col">
                         <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/videoseries?list=PLx4x_zx8csUglgKTmgfVFEhWWBQCasNGi"
+                            data="https://www.youtube.com/embed/videoseries?list=PLx4x_zx8csUglgKTmgfVFEhWWBQCasNGi"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen>
@@ -498,19 +499,19 @@
     </main>
 
 
-    <footer id="footer">
+    <footer id="footer" class="mt-5">
+
         <div class="container-fluid row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3">
             <div class="col" id="contact-info">
                 <div class="footer-brand">
-                    <img id="logoRodape" src="../img/logofooter.png" alt="conectjob" class="img-fluid h-50">
+                    <img id="logoRodape" src="../static/img/logofooter.png" alt="conectjob" class="img-fluid h-50">
                     <hr>
                 </div>
                 <p><i class="bi bi-geo-alt"></i> Praça Senador Salgado Filho, s/n° – Rio de Janeiro – RJ </p>
                 <p><i class="bi bi-telephone"></i>(99)9999-9999</p>
                 <p><i class="bi bi-envelope"></i>recodeprosquad12@gmail.com</p>
             </div>
-
-            <div class="col mt-5">
+            <div class="col">
                 <h4 class="mt-4 text-center">Outros serviços</h4>
                 <nav>
                     <a href="#">Propriedade intelecutal</a>
@@ -520,8 +521,7 @@
                     <a href="#">Direito internacional</a>
                 </nav>
             </div>
-
-            <div class="col mt-5">
+            <div class="col">
                 <div class="social-networks">
                     <h4 class="mt-4 text-center">Siga-nos</h4>
                     <div class="networks">
@@ -533,11 +533,31 @@
                 </div>
             </div>
             <p class="container text-center mt-5"><i class="bi bi-c-circle"></i> ConnectJob - Todos os direitos
-                reservados</p>
+                reservados
+            </p>
         </div>
     </footer>
-    
-    <script src="../javascript/script.js"></script>
+
+    <script>
+
+        const carregarVideos = () => {
+
+            const dataAtt = document.querySelectorAll("[data]");
+
+            dataAtt.forEach((alvo) => {
+                if (alvo.getBoundingClientRect().top < window.innerHeight) {
+                    alvo.src = alvo.getAttribute("data");
+                    alvo.removeAttribute("data")
+                }
+            })
+        };
+
+        window.onscroll = () => {
+            carregarVideos()
+        };
+
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>

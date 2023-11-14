@@ -52,3 +52,21 @@ function showSlides(n, no) {
   }
   x[slideIndex[no]-1].style.display = "block";  
 }
+
+const carregarVideos = () => {
+
+    const dataAtt = document.querySelectorAll("[data]");
+    
+    dataAtt.forEach((elemento) => {
+    if (elemento.getBoundingClientRect().top < window.innerHeight) {
+        elemento.src = elemento.getAttribute("data");
+        elemento.removeAttribute("data")
+    }
+})
+};
+    
+ 
+window.onscroll = () => {
+    carregarVideos()
+    console.log("escrollou!");
+    };

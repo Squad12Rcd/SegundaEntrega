@@ -25,6 +25,14 @@ body {
     border-bottom: solid green 2px;
 }
 
+/* NAVBAR */ 
+
+.navbar{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
 .t:hover {
 
     color: #67bc48 !important;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Edição de Categorias </title>
+</head>
+
+<body>
+	
+	<h2> Editar Categorias </h2>
+	<form th:action="@{/empresa/editar/{id}(id=${empresa.id})}" th:object="${empresa}" method="post">
+		<div>
+			<label for="id"> ID: </label>
+			<input type="text" id="id" th:field="*{id}" th:readonly="readonly" />
+		</div>
+		<div>
+			<label for="nome"> Nome: </label>
+			<input type="text" id="nome" th:field="*{nome}" />
+		</div>
+		<div>
+			<label for="descricao"> Descrição: </label>
+			<input type="text" id="descricao" th:field="*{email}" />
+		</div>
+		<div>
+			<label for="descricao"> Descrição: </label>
+			<input type="text" id="descricao" th:field="*{cnpj}" />
+		</div>
+		<div>
+			<label for="descricao"> Descrição: </label>
+			<input type="text" id="descricao" th:field="*{senha}" />
+		</div>
+		<div>
+			<button type="submit"> Salvar </button>
+		</div>
+	</form>
+</body>
+
+</html>

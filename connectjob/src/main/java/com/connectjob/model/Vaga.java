@@ -7,8 +7,10 @@ import java.util.Set;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -42,7 +44,7 @@ public class Vaga {
     private LocalDate dataCadastro;
 	
 	@ManyToOne
-	@JoinColumn(name = "empresa_id_fk", nullable = false)
+	@JoinColumn(name = "empresa_id")
 	private Empresa empresa;
 	
 	@ManyToMany
@@ -139,4 +141,25 @@ public class Vaga {
 	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
+
+	public Set<Usuario> getCandidato() {
+		return candidato;
+	}
+
+	public void setCandidato(Set<Usuario> candidato) {
+		this.candidato = candidato;
+	}
+
+	
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	
+
 }

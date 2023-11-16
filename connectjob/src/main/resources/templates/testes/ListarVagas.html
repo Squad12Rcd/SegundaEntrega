@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title> Listagem de Usuarios </title>
+</head>
+<body>
+	<div>
+			<h1>teste read</h1>
+			<table>
+				<tr th:each="vaga : ${vagas}">
+					<td th:text="${vaga.id}"></td>
+					<td th:text="${vaga.titulo}"></td>
+					<td th:text="${vaga.descricao}"></td>
+					<td th:text="${vaga.empresa.id}"></td>
+					<td th:text="${vaga.quantidade}"></td>
+					<td>
+						<a th:href="@{/vaga/editar/{id}(id=${vaga.id})}"> Editar </a>
+					<a th:href="@{/vaga/deletar/{id}(id=${vaga.id})}"> Deletar </a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script src="../../resources/static/css/style.css"></script>
+</body>
+</html>

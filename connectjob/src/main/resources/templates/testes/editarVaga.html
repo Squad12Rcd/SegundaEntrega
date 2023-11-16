@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Edição de Categorias </title>
+</head>
+
+<body>
+	
+	<h2> Editar Categorias </h2>
+	<form th:action="@{/vaga/editar/{id}(id=${vaga.id})}" th:object="${vaga}" method="post">
+		<div>
+			<label for="id"> ID: </label>
+			<input type="text" id="id" th:field="*{id}" th:readonly="readonly" />
+		</div>
+		<div>
+			<label for="nome"> Nome: </label>
+			<input type="text" id="nome" th:field="*{titulo}" />
+		</div>
+		<div>
+			<label for="descricao"> qtd: </label>
+			<input type="text" id="descricao" th:field="*{quantidade}" />
+		</div>
+		<div>
+			<label for="descricao"> Descrição: </label>
+			<input type="text" id="descricao" th:field="*{descricao}" />
+		</div>
+		<div>
+			<label for="descricao"> empresa: </label>
+			<input type="text" id="descricao" th:field="*{empresa}" />
+		</div>
+		<div>
+			<button type="submit"> Salvar </button>
+		</div>
+	</form>
+</body>
+
+</html>

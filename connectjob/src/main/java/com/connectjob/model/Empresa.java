@@ -1,6 +1,10 @@
 package com.connectjob.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,15 +28,24 @@ public class Empresa {
 	@Column(nullable = false, length = 18, unique = true)
 	private String cnpj;
 	
-	@Column(nullable = false, length = 32)
+	@Column(nullable = false, length = 250)
 	private String senha;
 	
 	@Column(nullable = false, length = 80, unique = true)
     private String email;
 	
-	@OneToMany(mappedBy = "empresa")
-	private List<Vaga> vagas;
+	@OneToMany(mappedBy = "empresa", orphanRemoval=true)
+	@Cascade(value= {CascadeType.ALL})
+	private List<Vaga> vagas = new ArrayList<>();
 	
+	public List<Vaga> getVagas() {
+		return vagas;
+	}
+
+	public void setVagas(List<Vaga> vagas) {
+		this.vagas = vagas;
+	}
+
 	public Empresa(Long id, String nome, String cnpj, String email, String senha) {
 		this.id = id;
 		this.nome = nome;

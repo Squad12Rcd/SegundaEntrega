@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Moon+Dance&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/cadastro.css">
+     <link th:href="@{/css/cadastro.css}" rel="stylesheet" />
     <title>Cadastro - JobConnect</title>
 </head>
 
@@ -79,7 +79,7 @@
             </div>
         </form>
     </main>
-    <script src="../static/javascript/script.js"></script>
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
 </body>
 
 </html>

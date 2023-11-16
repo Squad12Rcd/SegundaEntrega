@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> ConnectJob - Home </title>
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +20,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-body-light text-center">
       <div class="container-fluid bg-nav box">
-        <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" src="../static/img/2.png" alt="logo do projeto"
+        <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" th:src="@{/img/2.png}" alt="logo do projeto"
             width="150" height="100"></a>
         <button class="navbar-toggler bg-light text-success" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -47,7 +46,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center">
-            <a href="../templates/login.html" class="btn btn-light btn-outline-success rounded-pill"> Entrar </a>
+            <a th:href="@{/usuario/login}" class="btn btn-light btn-outline-success rounded-pill"> Entrar </a>
           </div>
         </div>
       </div>
@@ -66,11 +65,11 @@
               educação e alcançar todos os seus sonhos!</p>
             <div class="d-flex justify-content-center">
               <a href="login.html"><button class="btn btn-light btn-outline-success mt-3"> Entrar </button></a>
-              <a href="cadastro.html"><button class="btn btn-light btn-outline-dark mt-3 mx-3"> Criar conta</button></a>
+              <a th:href="@{/usuario/novo}"><button class="btn btn-light btn-outline-dark mt-3 mx-3"> Criar conta</button></a>
             </div>
           </div>
           <div class="col-12 col-lg-6 ">
-            <img src="../static/img/1 - versÆo normal.png" class="img-fluid rounded float-end">
+            <img th:src="@{/img/1 - versÆo normal.png}" class="img-fluid rounded float-end">
           </div>
         </div>
       </div>
@@ -82,8 +81,8 @@
       </div>
       <div class="box-proveSocial container mt-5">
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
-          <div class="col mb-5">
-            <img src="../static/img/provasocial.jpg" alt="pesquisa Glassdoor" class="img-fluid mb-2">
+          <div class="d-flex flex-column col mb-5">
+            <img th:src="@{/img/provasocial.jpg}" alt="pesquisa Glassdoor" class="img-fluid mb-2">
             <p style="font-size: 0.7em;">
               Fonte imagem: https://www.glassdoor.com.br/Sal%C3%A1rios/programador-sal%C3%A1rio-SRCH_KO0,11.html
             </p>
@@ -121,19 +120,19 @@
               facilmente executadas, sem erros ou instabilidades.</p>
           </div>
           <div class="col-12 col-lg-6 ">
-            <img src="../static/img/back-end-developer.png" class="img-fluid rounded float-end mb-5">
+            <img th:src="@{/img/back-end-developer.png}" class="img-fluid rounded float-end mb-5">
           </div>
         </div>
       </div>
 
-      <div class="container mt-5" class="mt-5">
+      <div class="container mt-5">
         <div class="">
           <h5 class="box"> Desenvolvedor Front-End</h5>
         </div>
         <div class="mt-5">
           <div class="row">
             <div class="col-12 col-lg-6 ">
-              <img src="../static/img/code-1076536_1280.jpg" class="img-fluid rounded float-start mb-5">
+              <img th:src="@{/img/code-1076536_1280.jpg}" class="img-fluid rounded float-start mb-5">
             </div>
             <div class="col-12 col-lg-6 ">
               <h4 class=""> O que é um desenvolvedor <span class="text-success"> front-end</span>?
@@ -154,7 +153,7 @@
           </div>
         </div>
 
-        <div class="" class="mt-5">
+        <div class="mt-5">
           <div class="mt-5">
             <h5 class="box"> Desenvolvedor Full Stack</h5>
           </div>
@@ -176,7 +175,7 @@
                 </p>
               </div>
               <div class="col-12 col-lg-6 ">
-                <img src="../static/img/full.jpg" class="img-fluid rounded float-end mb-5">
+                <img th:src="@{/img/full.jpg}"  class="img-fluid rounded float-end mb-5">
               </div>
             </div>
           </div>
@@ -192,7 +191,7 @@
             </p>
           </div>
           <div class="col">
-            <img src="../static/img/provasocial1.jpg" alt="Imagem O que é preciso" class="img-fluid mb-5">
+            <img th:src="@{/img/provasocial1.jpg}" alt="Imagem O que é preciso" class="img-fluid mb-5">
           </div>
         </div>
       </div>
@@ -201,7 +200,7 @@
     <section class="">
       <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 mt-5">
         <div class="col" style="text-align: center;">
-          <img src="../static/img/1.png" alt="" class="img-fluid h-75" style=" max-width: 80;">
+          <img th:src="@{/img/1.png}" alt="" class="img-fluid h-75" style=" max-width: 80;">
           <a href="../html/cadastro.html" style="text-decoration: none;"><button type="button"
               class="btn btn-success w-75" id="btn-cadastro">Cadastre-se</button></a>
         </div>
@@ -210,7 +209,7 @@
           <div class="row row-cols-xm-1 row-cols-1 row-cols-md-2 g-3 ">
             <div class="col">
               <div class="card card-box p-3">
-                <img src="../static/img/open-book.png" class="card-img-top mx-auto d-block" alt="...">
+                <img th:src="@{/img/open-book.png}" class="card-img-top mx-auto d-block" alt="...">
                 <div class="card-body">
                   <p class="fw-semibold fs-5 text-center">Cursos Online</p>
                   <p class="card-text">
@@ -222,7 +221,7 @@
             </div>
             <div class="col">
               <div class="card card-box p-3">
-                <img src="../static/img/espec-icon2.png" class="card-img-top mx-auto d-block mt-1" style="height: 70px;"
+                <img th:src="@{/img/espec-icon2.png}" class="card-img-top mx-auto d-block mt-1" style="height: 70px;"
                   alt="...">
                 <div class="card-body">
                   <p class="text-center fw-semibold fs-5">Especialização</p>
@@ -235,7 +234,7 @@
             </div>
             <div class="col col-sm col-md mt-4">
               <div class="card card-box p-3">
-                <img src="../static/img/job-icon1.png" class="card-img-top mx-auto d-block mt-3 h-auto" alt="...">
+                <img th:src="@{/img/job-icon1.png}" class="card-img-top mx-auto d-block mt-3 h-auto" alt="...">
                 <div class="card-body">
                   <p class="text-center fw-semibold fs-5">Empregabilidade</p>
                   <p class="card-text">
@@ -247,7 +246,7 @@
             </div>
             <div class="col mt-4 mb-5">
               <div class="card card-box p-3">
-                <img src="../static/img/baixarenda-icon-removebg-preview.png" class="card-img-top mx-auto d-block mt-2 h-auto"
+                <img th:src="@{/img/baixarenda-icon-removebg-preview.png}" class="card-img-top mx-auto d-block mt-2 h-auto"
                   alt="...">
                 <div class="card-body">
                   <p class="text-center fw-semibold fs-5">Inclusão</p>
@@ -274,7 +273,7 @@
         <div class="slideSquad">
           <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 row-cols-lg-1">
             <div class="col d-flex justify-content-center">
-              <img src="../static/img/renatodavid.png" class="w-25 h-80 rounded" alt="Membro Equipe">
+              <img th:src="@{/img/renatodavid.png}" class="w-25 h-80 rounded" alt="Membro Equipe">
             </div>
             <div class="col">
               <p class="card-title text-success text-center mt-3 mb-3 fs-4 fw-bolder "> Renato Marques David </p>
@@ -292,7 +291,7 @@
         <div class="slideSquad">
           <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 row-cols-lg-1">
             <div class="col d-flex justify-content-center">
-              <img src="../static/img/rafaelSantos.png" class="w-25 h-80 rounded" alt="Membro Equipe">
+              <img th:src="@{/img/rafaelSantos.png}" class="w-25 h-80 rounded" alt="Membro Equipe">
             </div>
             <div class="col">
               <p class="card-title text-success text-center mb-3 mt-3 fs-4 fw-bolder"> Rafael Santos </p>
@@ -311,7 +310,7 @@
         <div class="slideSquad">
           <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 row-cols-lg-1">
             <div class="col d-flex justify-content-center">
-              <img src="../static/img/rafaelNascimento.png" class="w-25 h-80 rounded" alt="Membro Equipe">
+              <img th:src="@{/img/rafaelNascimento.png}" class="w-25 h-80 rounded" alt="Membro Equipe">
             </div>
             <div class="col">
               <p class="card-title text-success text-center mb-3 mt-3 fs-4 fw-bolder"> Rafael Nascimento </p>
@@ -330,7 +329,7 @@
         <div class="slideSquad">
           <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 row-cols-lg-1">
             <div class="col d-flex justify-content-center">
-              <img src="../static/img/stefanyMarques.png" class="w-25 h-80 rounded" alt="Membro Equipe">
+              <img th:src="@{/img/stefanyMarques.png}" class="w-25 h-80 rounded" alt="Membro Equipe">
             </div>
             <div class="col">
               <p class="card-title text-success text-center mb-3 mt-3 fs-4 fw-bolder"> Stéfany Marques </p>
@@ -349,7 +348,7 @@
         <div class="slideSquad">
           <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 row-cols-lg-1">
             <div class="col d-flex justify-content-center">
-              <img src="../static/img/thalles.jpeg" class="w-25 h-80 rounded" alt="Membro Equipe">
+              <img th:src="@{/img/thalles.jpeg}" class="w-25 h-80 rounded" alt="Membro Equipe">
             </div>
             <div class="col">
               <p class="card-title text-success text-center mb-3 mt-3 fs-4 fw-bolder"> Thalles Sampaio </p>
@@ -367,7 +366,7 @@
         <div class="slideSquad">
           <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 row-cols-lg-1">
             <div class="col d-flex justify-content-center">
-              <img src="../static/img/thaynaSantana.png" class="w-25 h-80 rounded" alt="Membro Equipe">
+              <img th:src="@{/img/thaynaSantana.png}" class="w-25 h-80 rounded" alt="Membro Equipe">
             </div>
             <div class="col">
               <p class="card-title text-success text-center mb-3 mt-3 fs-4 fw-bolder"> Thayna Santana </p>
@@ -472,7 +471,7 @@
     <div class="container-fluid row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3">
         <div class="col" id="contact-info">
             <div class="footer-brand">
-                <img id="logoRodape" src="../static/img/logofooter.png" alt="conectjob" class="img-fluid h-50">
+                <img id="logoRodape" th:src="@{/img/logofooter.png}" alt="conectjob" class="img-fluid h-50">
                 <hr>
             </div>
             <p><i class="bi bi-geo-alt"></i> Praça Senador Salgado Filho, s/n° – Rio de Janeiro – RJ </p>
@@ -506,7 +505,7 @@
     </div>
 </footer>
 
-  <script src="../static/javascript/script.js"></script>
+  <script type="text/javascript" th:src="@{/js/script.js}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>

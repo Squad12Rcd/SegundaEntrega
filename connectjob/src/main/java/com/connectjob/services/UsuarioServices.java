@@ -7,7 +7,7 @@ import com.connectjob.model.Usuario;
 public interface UsuarioServices {
 
 	List<Usuario> getAllUsuarios();
-	
+		
 	Usuario getUsuarioById(Long id);
 	
 	Usuario saveUsuario(Usuario usuario);

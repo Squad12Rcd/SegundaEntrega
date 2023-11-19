@@ -1,8 +1,8 @@
 package com.connectjob.services;
 
 import java.util.List;
-import java.util.Set;
 
+import com.connectjob.model.Empresa;
 import com.connectjob.model.Vaga;
 
 public interface VagaServices {
@@ -16,4 +16,6 @@ public interface VagaServices {
 	Vaga updateVaga(Long id, Vaga vagaAtualizada);
 	
 	void deleteVaga(Long id);
+
+
 }

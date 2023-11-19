@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.connectjob.model.Usuario;
 import com.connectjob.repositories.UsuarioRepository;
@@ -25,82 +26,67 @@ public class UsuarioController {
 	
 	private UsuarioRepository usuarioRepository;
 	
-	//Listar
-	@GetMapping("/Listar")
-	public String listaUsuarios(Model model) {
-		List<Usuario> usuarios = usuarioServices.getAllUsuarios();
-		model.addAttribute("usuarios", usuarios);
-		return "testes/ListarUsuarios";
+	//Home Usuario
+	@GetMapping("/home/{id}")
+	public String listaUsuario (@PathVariable Long id, Model model) {
+		Usuario usuariolocalizado =  usuarioServices.getUsuarioById(id);		
+		model.addAttribute("usuario", usuariolocalizado);
+		return "homeusuario";
 	}
 	
-	// pagina de login 
-		@GetMapping("/login")
-		public String login(Model model) {		
-			return "login";
-		}
-		
-		// página de logado 
-		@GetMapping("/logado")
-		public String logado(Model model) {		
-			return "homelogado";
-		}
-		
-		// página de cursos 
-		@GetMapping("/cursos")
-		public String cursos(Model model) {		
-			return "cursos";
-		}
-		
-		// página de emprego
-		@GetMapping("/emprego")
-		public String emprego(Model model) {		
-			return "emprego";
-		}
-		
-		// página de contatos 
-		@GetMapping("/contatos")
-		public String contatos(Model model) {		
-			return "contatos";
-		}	
+	// Visualizar perfil 
+	@GetMapping("/visualizar/{id}")
+	public String visualizarperfil(Model model) {
+		List<Usuario> usuariolocalizado =  usuarioServices.getAllUsuarios();		
+		model.addAttribute("usuario", usuariolocalizado);
+		return "visualizarperfil";
+	}
+	
+	// PERFIL DO USUÁRIO 
+	@GetMapping("/profile/{id}")
+	public String perfilusuario(@PathVariable Long id, Model model) {
+		Usuario usuario = usuarioServices.getUsuarioById(id);
+		model.addAttribute("usuario", usuario);
+		return "userprofile";
+	}	
 	
 	//formulario de cadastro
-	@GetMapping("/cadastro")
-	public String formCadastroUsuario(Model model) {
-		Usuario usuario = new Usuario();
-		model.addAttribute("usuario", usuario);
-		return "cadastro.html";
-	}
-	
-	//inserir dados do cadastro no banco de dados
-	@GetMapping("/cadastrar")
-	public String cadastrarUsuario(@ModelAttribute("usuario") Usuario usuario) {
-		String senhaEncriptada = SenhaUtils.encode(usuario.getSenha());
-		usuario.setSenha(senhaEncriptada);
-		usuarioServices.saveUsuario(usuario);
-		return "redirect:/usuario/cadastro";
-	}
-	
+		@GetMapping("/cadastro")
+		public String formCadastroUsuario(Model model) {
+			Usuario usuario = new Usuario();
+			model.addAttribute("usuario", usuario);
+			return "cadastro";
+		}
+		
+		//inserir dados do cadastro no banco de dados
+		@PostMapping("/cadastrar")
+		public String cadastrarUsuario(@ModelAttribute("usuario") Usuario usuario) {
+			String senhaEncriptada = SenhaUtils.encode(usuario.getSenha());
+			usuario.setSenha(senhaEncriptada);
+			usuarioServices.saveUsuario(usuario);
+						
+			return "perfilusuario";
+		}
+		
 	//formulario de ediçao
 	@GetMapping("/editar/{id}")
 	public String formEditarUsuario(@PathVariable Long id, Model model) {
 		Usuario usuario = usuarioServices.getUsuarioById(id);
 		model.addAttribute("usuario", usuario);
-		return "testes/editarUsuario";
+		return "editarUsuario";
 	}
 	
 	//inserir dados do update no banco de dados
 	@PostMapping("/editar/{id}")
-	public String editarUsuario(@PathVariable Long id, @ModelAttribute("usuario") Usuario usuario) {
-		String senhaAtual = usuarioRepository.getOne(id).getSenha();
-		usuario.setSenha(senhaAtual);
+	public String editarUsuario(@PathVariable Long id, @ModelAttribute("usuario") Usuario usuario) {		
 		usuarioServices.updateUsuario(id, usuario);
-		return "redirect:/usuario/Listar";
+		return "perfilusuario";
 	}
 	
 	//deletar usuario
 	@GetMapping("/deletar/{id}")
 	public String deletarUsuario(@PathVariable Long id) {
 		usuarioServices.deleteUsuario(id);
-		return "redirect:/cadastro";
+		return "index";
 	}
 }

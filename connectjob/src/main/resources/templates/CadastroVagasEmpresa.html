@@ -2,26 +2,25 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> ConnectJob - Home </title>
-  <link rel="stylesheet" href="Empresa.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <title> ConnectJob - Home </title>
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-body-light">
       <div class="container-fluid bg-nav box">
-        <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" src="Imagens/Logo.png" alt="logo do projeto"
+        <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" th:src="@{/img/2.png}" alt="logo do projeto"
             width="150" height="100"></a>
         <button class="navbar-toggler bg-light text-success" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -58,19 +57,19 @@
     </div>
 
 <div class="container"> 
-    <form class="row g-3">
+    <form class="row g-3" th:action="@{/vaga/cadastrarvaga}" th:object="${vaga}" method="post">
         <div class="col-md-6">
           <label for="inputNomeEmpresa" class="form-label">Nome da Empresa</label>
-          <input type="text" class="form-control" id="inputNomeEmpresa">
+          <input type="number" class="form-control" id="inputNomeEmpresa" th:field="*{idEmpresa}">
         </div>
         <div class="col-md-6">
-          <label for="inputNomevaga" class="form-label">Nome da Vaga</label>
-          <input type="text" class="form-control" id="inputNomeVaga">
+          <label for="inputNomevaga" class="form-label">Título da Vaga</label>
+          <input type="text" class="form-control" id="inputNomeVaga" th:field="*{titulo}">
         </div>
        
         <div class="col-12">
             <label for="Descricao" class="form-label">Descrição da Vaga</label>
-            <textarea class="form-control" id="DescricaoDaVaga" rows="3"></textarea>
+            <textarea class="form-control" id="DescricaoDaVaga" rows="3" th:field="*{descricao}"></textarea>
           </div>
         <div class="col-md-6">
           <label for="inputModalidade" class="form-label">Modalidade da vaga</label>

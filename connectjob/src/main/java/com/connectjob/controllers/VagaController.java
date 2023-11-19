@@ -32,49 +32,52 @@ public class VagaController {
 	private EmpresaServices empresaServices;
 	
 	//listar vagas
-	@GetMapping("/listar")
-	public String listarVagas(Model model) {
-		List<Vaga> vagas = vagaServices.getAllVaga();
-		model.addAttribute("vagas", vagas);
-		return "testes/ListarVagas";
-	}
+//	@GetMapping
+////	public String listarVagas(Model model) {		
+////		List<Vagas> vagasCadastradas = vagaServices.getAllVaga();
+////		model.addAttribute("vagas", vagas);
+////		return "ListarVagas";
+////	}
 	
 	//form cadastro
-	@GetMapping("/cadastro")
-	public String formVaga(Model model) {
-
+	@GetMapping("/cadastro/{idEmpresa}")
+	public String formVaga(@PathVariable Long idEmpresa, Model model) {
 		Vaga vaga = new Vaga();
-
+		Empresa empresaLocalizada = empresaServices.getEmpresaById(idEmpresa);		
+		model.addAttribute("empresa", empresaLocalizada);
 		model.addAttribute("vaga", vaga);
-		return "testes/CadastroVaga";
+		return "cadastroVagas";
 	}
+	
+//	 ---------------------------------------------------------
+	
 	
 	// inserir dados no banco
-	@GetMapping("/cadastrar")
-	public String cadastrarVaga(@ModelAttribute("vaga") Vaga vaga, @RequestParam Long empresa) {
-		vagaServices.saveVaga(vaga);
-		return "redirect:/vaga/cadastro";
+	@PostMapping("/cadastrar")
+	public String cadastrarVaga(@ModelAttribute("vaga") Vaga vaga) {
+		vagaServices.saveVaga(vaga);		
+		return "listarVagas";
 	}
 	
-	//formuladrio edicao
+	//formulario edicao
 	@GetMapping("/editar/{id}")
 	public String formEditarVaga(@PathVariable Long id, Model model) {
 		Vaga vaga = vagaServices.getVagaById(id);
 		model.addAttribute("vaga", vaga);
-		return "testes/editarVaga";
+		return "editarVaga";
 	}
 	
 	//inserir dados no banco
 	@PostMapping("/editar/{id}")
 	public String editarVaga(@PathVariable Long id, @ModelAttribute("vaga") Vaga vaga ) {
 		vagaServices.updateVaga(id, vaga);
-		return "redirect:/vaga/listar";
+		return "HomeEmpresa";
 	}
 	
 	//deletar vaga
 	@GetMapping("/deletar/{id}")
 	public String deletarVaga(@PathVariable Long id) {
 		vagaServices.deleteVaga(id);
-		return "redirect:/vaga/listar";
+		return "HomeEmpresa";
 	}
 }

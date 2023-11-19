@@ -23,8 +23,8 @@ public class UsuarioServiceImpl implements UsuarioServices {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Usuario getUsuarioById(Long id) {
-		return usuarioRepository.findById(id).orElse(null);
+	public Usuario getUsuarioById(Long usuarioId) {
+		return usuarioRepository.findById(usuarioId).orElse(null);
 	}
 
 	@Override

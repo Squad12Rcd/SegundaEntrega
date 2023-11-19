@@ -51,19 +51,23 @@
 		<div class="container shadow mt-3">
 			<p class="fs-1 text-center mt-3"> Cadastrar Vaga </p>
 	
-	<div class="p-3">
+	<div class="p-3" >
 	<form th:action="@{/vaga/cadastrar}" th:object="${vaga}" method="post">
 		<div>
 			<label for="nome"> Nome da vaga: </label>
 			<input class="form-control" type="text" th:field="*{titulo}" id="titulo">
+		</div>
+				
+		<div th:field="*{empresa}">			
+			<label for="nome"> Id da empresa: </label>
+			<input class="form-control" th:each="empresa : ${empresa}" th:value="${empresa.id}" disabled />
 		</div>
 		<div>
 			<div>
 			<label for="nome"> Quantidade de vagas: </label>
 			<input class="form-control" type="number" id="quantidade" th:field="*{quantidade}" />
 		</div>
-		<div>
-			<div>
+		<div>			
 			<label for="nome"> Descrição: </label>
 			<input class="form-control"  type="text" id="descricao" th:field="*{descricao}" />
 		</div>
@@ -78,8 +82,8 @@
 	</div>
     
 	</main>
-    
-        <footer id="footer" class="mt-5">
+	
+    <footer id="footer" class="mt-5">
 
         <div class="container-fluid row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3">
             <div class="col" id="contact-info">

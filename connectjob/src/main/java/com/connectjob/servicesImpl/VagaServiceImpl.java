@@ -1,9 +1,6 @@
 package com.connectjob.servicesImpl;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +10,7 @@ import com.connectjob.model.Empresa;
 import com.connectjob.model.Vaga;
 import com.connectjob.repositories.EmpresaRepository;
 import com.connectjob.repositories.VagaRepository;
-import com.connectjob.services.EmpresaServices;
 import com.connectjob.services.VagaServices;
-
-import jakarta.persistence.EntityManager;
 
 @Service
 public class VagaServiceImpl implements VagaServices {
@@ -24,15 +18,17 @@ public class VagaServiceImpl implements VagaServices {
 	@Autowired
 	private VagaRepository vagaRepository;
 	
+	@Autowired
+	private EmpresaRepository empresaRepository;
+	
 	
 	@Override
 	public List<Vaga> getAllVaga() {
 		return vagaRepository.findAll();
 	}
 
-	@Override
-	public Vaga saveVaga(Vaga vaga) {
-		return vagaRepository.save(vaga);
+	public Vaga saveVaga(Vaga vaga) {	
+	return vagaRepository.save(vaga);	
 	}
 
 	@Override

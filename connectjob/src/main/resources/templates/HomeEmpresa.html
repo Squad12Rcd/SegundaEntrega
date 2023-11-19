@@ -52,7 +52,7 @@
   <main>
 
     <div class="container">
-  <h1 class=" text-center text-success mt-5"> Seja bem-vindo!</h1>
+  <h1 class=" text-center text-success mt-5"> Seja bem-vindo! </h1>
   
   		<div class="container shadow" th:if="${usuario != null}"> 
 
@@ -73,6 +73,16 @@
     <div class="box-vagas shadow">
         <p class="fs-4 md-5 fw-bolder">Angular Developer TC Engenharia - São Paulo</p>
         <p>
+			
+			<div class="container"> 
+
+			<ul class="list-group list-group-flush" th:each="vaga : ${vaga}">
+		  	<li class="list-group-item"><strong>Id:</strong> <span th:text="${vaga.id}"></span></li>
+		  	<li class="list-group-item"><strong>Nome da vaga:</strong> <span th:text="${vaga.titulo}"></span></li>
+		  	<li class="list-group-item"><strong>Descrição da Vaga:</strong> <span th:text="${vaga.descricao}"> </li>
+		  	<li class="list-group-item"><strong>Quantidade de vaga:</strong> <span th:text="${vaga.quantidade}"></li>
+</ul>
+			
             10 Vagas disponiveis! <br>
             Requisitos: <br>
             - Mais de 5 anos de experiência trabalhando como desenvolvedor. <br>

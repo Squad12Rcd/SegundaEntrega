@@ -51,9 +51,9 @@
     </header>
     
     <main> 
-		<p class="fs-1 text-center"> Informações do usuário </p>
+		<p class="fs-1 text-center"> Informações da empresa </p>
 		
-				<div class="container shadow" th:if="${empresa != null}"> 
+				<div class="container shadow mb-5" th:if="${empresa != null}"> 
 
 	<ul class="list-group list-group-flush" th:each="empresa : ${empresa}">
   <li class="list-group-item"><strong>Id:</strong> <span th:text="${empresa.id}"></span></li>
@@ -62,21 +62,18 @@
   <li class="list-group-item"><strong>E-mail:</strong> <span th:text="${empresa.email}"></li>
 </ul>
 		
-		<div class="d-flex justify-content-center gap-5">
-
-<a class="btn btn-danger" th:href="@{/empresa}"> Confirmar </a>
-
-<a class="btn btn-danger btn-sm" th:href="@{/empresa/editar/{id}(id=${empresa.id})}"><button class="btn btn-success mb-5"> Editar </button></a>
-				
-				
-<a class="btn btn-danger btn-sm" th:href="@{/empresa/deletar/{id}(id=${empresa.id})}"><button class="btn btn-danger mb-5"> Excluir Conta </button></a>
-				
-		</div>	
+	<div class="d-flex justify-content-center gap-5">	
+	<a th:href="@{/empresa/editar/{id}(id=${empresa.id})}"><button class="btn btn-success mb-5"> Editar </button></a>	
+	<a th:href="@{/empresa/deletar/{id}(id=${empresa.id})}"><button class="btn btn-danger mb-5"> Excluir Conta </button></a>
+	</div>	
+	<div class="d-flex justify-content-center">
+		<a th:href="@{/empresa/home/{id}(id=${empresa.id})}"><button class="btn btn-success mb-5">  Ir para Home </button></a>
 		</div>
-    
+
+</div>  
 	</main>
-    
-        <footer id="footer" class="mt-5">
+	    
+<footer id="footer" class="mt-5">
 
         <div class="container-fluid row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3">
             <div class="col" id="contact-info">

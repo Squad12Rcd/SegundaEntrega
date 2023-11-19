@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.connectjob.model.Usuario;
 import com.connectjob.repositories.UsuarioRepository;
 import com.connectjob.services.UsuarioServices;
-import com.connectjob.servicesImpl.UsuarioServiceImpl;
 import com.connectjob.utils.SenhaUtils;
 
 @Controller
@@ -28,20 +27,28 @@ public class UsuarioController {
 	private UsuarioRepository usuarioRepository;
 	
 	//Home Usuario
-	@GetMapping
-	public String listaUsuario (Model model) {
-		List<Usuario> usuariolocalizado =  usuarioServices.getAllUsuarios();		
-		model.addAttribute("usuarios", usuariolocalizado);
+	@GetMapping("/home/{id}")
+	public String listaUsuario (@PathVariable Long id, Model model) {
+		Usuario usuariolocalizado =  usuarioServices.getUsuarioById(id);		
+		model.addAttribute("usuario", usuariolocalizado);
 		return "homeusuario";
 	}
 	
 	// Visualizar perfil 
-	@GetMapping("/visualizar")
+	@GetMapping("/visualizar/{id}")
 	public String visualizarperfil(Model model) {
 		List<Usuario> usuariolocalizado =  usuarioServices.getAllUsuarios();		
 		model.addAttribute("usuario", usuariolocalizado);
 		return "visualizarperfil";
 	}
+	
+	// PERFIL DO USUÁRIO 
+	@GetMapping("/profile/{id}")
+	public String perfilusuario(@PathVariable Long id, Model model) {
+		Usuario usuario = usuarioServices.getUsuarioById(id);
+		model.addAttribute("usuario", usuario);
+		return "userprofile";
+	}	
 	
 	//formulario de cadastro
 		@GetMapping("/cadastro")

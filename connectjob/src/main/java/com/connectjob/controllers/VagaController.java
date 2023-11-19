@@ -20,6 +20,7 @@ import com.connectjob.services.EmpresaServices;
 import com.connectjob.services.VagaServices;
 
 
+
 @Controller
 @RequestMapping("/vaga")
 public class VagaController {
@@ -31,18 +32,25 @@ public class VagaController {
 	private EmpresaServices empresaServices;
 	
 	//listar vagas
-	@GetMapping
-	public String listarVagas(Model model) {		
-		return "ListarVagas";
-	}
+//	@GetMapping
+////	public String listarVagas(Model model) {		
+////		List<Vagas> vagasCadastradas = vagaServices.getAllVaga();
+////		model.addAttribute("vagas", vagas);
+////		return "ListarVagas";
+////	}
 	
 	//form cadastro
-	@GetMapping("/cadastro")
-	public String formVaga(Model model) {
+	@GetMapping("/cadastro/{idEmpresa}")
+	public String formVaga(@PathVariable Long idEmpresa, Model model) {
 		Vaga vaga = new Vaga();
+		Empresa empresaLocalizada = empresaServices.getEmpresaById(idEmpresa);		
+		model.addAttribute("empresa", empresaLocalizada);
 		model.addAttribute("vaga", vaga);
 		return "cadastroVagas";
 	}
+	
+//	 ---------------------------------------------------------
+	
 	
 	// inserir dados no banco
 	@PostMapping("/cadastrar")

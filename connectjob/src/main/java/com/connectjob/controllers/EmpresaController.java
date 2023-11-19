@@ -24,20 +24,31 @@ public class EmpresaController {
 	private EmpresaServices empresaServices;
 	
 	//Home Empresa
-	@GetMapping
-	public String listaEmpresa (Model model) {		
-		return "HomeEmpresa";
+	@GetMapping("/home/{id}")
+	public String HomeEmpresa (@PathVariable Long id, Model model) {
+		Empresa empresaLocalizada =  empresaServices.getEmpresaById(id);		
+		model.addAttribute("empresa", empresaLocalizada);
+		return "perfilEmpresa";
 	}
 	
-	//Listar
+	//Listar (ESSE NÃO FUNCIONA MAIS)
 	
-//	@GetMapping("/listar")
-//	public String listarEmpresas(Model model) {
-//		List<Empresa> empresa = empresaServices.getAllEmpresa();
-//		model.addAttribute("empresa", empresa);
-//		return "perfilempresa";
-//	}
-//	
+	@GetMapping("/listar")
+	public String listarEmpresas(Model model) {
+		List<Empresa> empresa = empresaServices.getAllEmpresa();
+
+		model.addAttribute("empresa", empresa);		
+		return "perfilempresa";
+	}
+	
+	// PERFIL DA EMPRESA
+	@GetMapping("/perfilEmpresa/{id}")
+	public String perfilempresa(@PathVariable Long id, Model model) {
+		Empresa empresaLocalizada = empresaServices.getEmpresaById(id);
+		model.addAttribute("empresa", empresaLocalizada);
+		return "perfilEmpresa";
+	}
+	
 	
 	//Formulario de cadastro
 	@GetMapping("/cadastro")

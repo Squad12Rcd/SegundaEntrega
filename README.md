@@ -48,7 +48,7 @@ O projeto tem como proposta levar conhecimento em áreas de tecnologia para os e
 <strong> Modelo Conceitual</strong><br>
 <img src="https://github.com/Squad12Rcd/squad12/blob/eeae6d77f022d5507924492b0515370f9d982444/img/modeloCondeitual.jpeg" /> <br>
 <strong> Modelo Lógico </strong> <br>
-<img src="https://github.com/Squad12Rcd/squad12/blob/main/img/modeloLogico.jpeg" />
+<img src="https://github.com/Squad12Rcd/squad12/blob/05bf27b88dd885024286fc3ab6945285d0dc9ca7/img/modelologico.jpeg" />
 </div>
 
 

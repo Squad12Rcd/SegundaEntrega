@@ -28,7 +28,7 @@ Iniciando modelagem MVC e implementando do CRUD do banco de dados com MySQL e Ja
 
 <h2> Instalação: </h2>
 
-Para executar o Banco de dados: utilizar o comando <strong>CREATE DATABSE connectjob;</strong>
+<li> Para executar o Banco de dados: utilizar o comando <strong>CREATE DATABASE connectjob;</strong> </li>
 
 
 <h2> Colaboradores </h2>
@@ -40,6 +40,15 @@ Para executar o Banco de dados: utilizar o comando <strong>CREATE DATABSE connec
 @Stephmarquess - Front-End, Back End
 @RafaelNasa - Front-End
 
+<div align="center"> 
+
+Renato Marques <br> <a href="https://www.linkedin.com/in/RenatoMarquesDavid" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <br>
+Stéfany Marques <br> <a href="https://www.linkedin.com/in/stéfany-marques-4390a0281" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <br>
+Rafael Santos <br> <a href="https://www.linkedin.com/in/rafael-dos-santos-433950267" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <br>
+Thalles Sampaio <br> <a href="https://www.linkedin.com/in/thallessampaio" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> <br>
+Thayna Santana <br> <a href=" https://www.linkedin.com/in/thayss/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a><br>
+
+</div>
 
 Forneça informações de contato, como e-mail ou links para redes sociais, para que os usuários possam entrar em contato se tiverem dúvidas ou problemas.
 E-mail do Squad: recodeprosquad12@gmail.com

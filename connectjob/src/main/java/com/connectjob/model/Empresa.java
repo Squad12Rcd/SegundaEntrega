@@ -1,17 +1,12 @@
 package com.connectjob.model;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,29 +29,23 @@ public class Empresa {
 	@Column(nullable = false, length = 80, unique = true)
     private String email;
 	
-	@OneToMany(mappedBy = "empresa", orphanRemoval=true)
-	@Cascade(value= {CascadeType.ALL})
-	private List<Vaga> vagas = new ArrayList<>();
+
+
+	public Empresa() {
+		super();
+	}
+
 	
-	public List<Vaga> getVagas() {
-		return vagas;
-	}
 
-	public void setVagas(List<Vaga> vagas) {
-		this.vagas = vagas;
-	}
-
-	public Empresa(Long id, String nome, String cnpj, String email, String senha) {
+	public Empresa(Long id, String nome, String cnpj, String senha, String email) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.cnpj = cnpj;
-		this.email = email;
 		this.senha = senha;
+		this.email = email;
 	}
-	
-	public Empresa() {
-		
-	}
+
 
 	public Long getId() {
 		return id;
@@ -82,6 +71,14 @@ public class Empresa {
 		this.cnpj = cnpj;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -90,11 +87,5 @@ public class Empresa {
 		this.email = email;
 	}
 
-	public String getSenha() {
-		return senha;
+	
 	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-}

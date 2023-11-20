@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.connectjob.model.Usuario;
+
 import com.connectjob.repositories.UsuarioRepository;
 import com.connectjob.services.UsuarioServices;
-import com.connectjob.utils.SenhaUtils;
+
+
 
 @Controller
 @RequestMapping("/usuario")
@@ -26,7 +27,7 @@ public class UsuarioController {
 	
 	private UsuarioRepository usuarioRepository;
 	
-	//Home Usuario
+
 	@GetMapping("/home/{id}")
 	public String listaUsuario (@PathVariable Long id, Model model) {
 		Usuario usuariolocalizado =  usuarioServices.getUsuarioById(id);		
@@ -34,7 +35,29 @@ public class UsuarioController {
 		return "homeusuario";
 	}
 	
-	// Visualizar perfil 
+
+	@GetMapping("/cursos/{id}")
+	public String curso (@PathVariable Long id, Model model) {
+		Usuario usuariolocalizado =  usuarioServices.getUsuarioById(id);
+		model.addAttribute("usuario", usuariolocalizado);
+		return "cursos";
+	}
+	
+	@GetMapping("/vagas/{id}")
+	public String paginavagas (@PathVariable Long id, Model model) {
+		Usuario usuariolocalizado =  usuarioServices.getUsuarioById(id);
+		model.addAttribute("usuario", usuariolocalizado);
+		return "emprego";
+	}	
+	
+	@GetMapping("/contatos/{id}")
+	public String paginacontatos (@PathVariable Long id, Model model) {
+		Usuario usuariolocalizado =  usuarioServices.getUsuarioById(id);
+		model.addAttribute("usuario", usuariolocalizado);
+		return "contatos";
+	}	
+	
+
 	@GetMapping("/visualizar/{id}")
 	public String visualizarperfil(Model model) {
 		List<Usuario> usuariolocalizado =  usuarioServices.getAllUsuarios();		
@@ -42,7 +65,7 @@ public class UsuarioController {
 		return "visualizarperfil";
 	}
 	
-	// PERFIL DO USUÁRIO 
+
 	@GetMapping("/profile/{id}")
 	public String perfilusuario(@PathVariable Long id, Model model) {
 		Usuario usuario = usuarioServices.getUsuarioById(id);
@@ -50,7 +73,7 @@ public class UsuarioController {
 		return "userprofile";
 	}	
 	
-	//formulario de cadastro
+
 		@GetMapping("/cadastro")
 		public String formCadastroUsuario(Model model) {
 			Usuario usuario = new Usuario();
@@ -58,32 +81,29 @@ public class UsuarioController {
 			return "cadastro";
 		}
 		
-		//inserir dados do cadastro no banco de dados
+
 		@PostMapping("/cadastrar")
 		public String cadastrarUsuario(@ModelAttribute("usuario") Usuario usuario) {
-			String senhaEncriptada = SenhaUtils.encode(usuario.getSenha());
-			usuario.setSenha(senhaEncriptada);
 			usuarioServices.saveUsuario(usuario);
 						
-			return "perfilusuario";
+			return "homeusuario";
 		}
 		
-	//formulario de ediçao
+
 	@GetMapping("/editar/{id}")
 	public String formEditarUsuario(@PathVariable Long id, Model model) {
 		Usuario usuario = usuarioServices.getUsuarioById(id);
 		model.addAttribute("usuario", usuario);
-		return "editarUsuario";
+		return "editarusuario";
 	}
 	
-	//inserir dados do update no banco de dados
 	@PostMapping("/editar/{id}")
 	public String editarUsuario(@PathVariable Long id, @ModelAttribute("usuario") Usuario usuario) {		
 		usuarioServices.updateUsuario(id, usuario);
-		return "perfilusuario";
+		return "homeusuario";
 	}
 	
-	//deletar usuario
+
 	@GetMapping("/deletar/{id}")
 	public String deletarUsuario(@PathVariable Long id) {
 		usuarioServices.deleteUsuario(id);

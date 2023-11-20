@@ -1,15 +1,13 @@
 package com.connectjob.model;
 
 
-import java.util.HashSet;
-import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,7 +20,7 @@ public class Usuario {
 	
 	@Column(nullable = false, length = 80)
 	private String nome;
-	
+
 	@Column(nullable = false, length = 250)
 	private String senha;
 	
@@ -32,8 +30,6 @@ public class Usuario {
 	@Column(nullable = false, length = 14, unique = true)
 	private String cpf;
 	
-	@ManyToMany(mappedBy = "candidato")
-	private Set<Vaga> vagas = new HashSet<>();
 	
 	public Usuario() {
 		 
@@ -47,6 +43,7 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
+
 	public Long getId() {
 		return id;
 	}

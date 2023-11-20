@@ -31,30 +31,28 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto me-3 mb-2 mb-lg-0 fs-5 gap-4  ">
                         <li class="nav-item">
-                            <a class="nav-link active t " href="#">Home</a>
+                            <a class="nav-link active t " th:href="@{/usuario/home/{id}(id=${usuario.id})}">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link t" th:href="@{static/cursos}"> Cursos </a>
+                            <a class="nav-link t" th:href="@{/usuario/cursos/{id}(id=${usuario.id})}"> Cursos </a>
                         </li>               
                   
                         <li class="nav-item">
-                            <a class="nav-link t" th:href="@{/usuario/emprego}"> Vagas </a>
+                            <a class="nav-link t" th:href="@{/usuario/vagas/{id}(id=${usuario.id})}"> Vagas </a>
                         </li>
-
+                        
                         <li class="nav-item">
-                            <a class="nav-link t" th:href="@{/usuario/contatos}"> Contatos </a>
+                            <a class="nav-link t" th:href="@{/usuario/contatos/{id}(id=${usuario.id})}"> Contatos </a>
                         </li>
+             
                         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Meu Perfil
           </a>
           <ul class="dropdown-menu text-center">
-            <li><a class="dropdown-item" th:href="@{/usuario/profile/{id}(id=${usuario.id})}"> <strong>Visualizar Perfil</strong> </a></li>
-            <li><a class="dropdown-item" th:href="@{/usuario/editar/{id}(id=${usuario.id})}"> <strong>Editar Perfil</strong></a></li>
-            <li><a class="dropdown-item" href="#"> <strong> Minhas Vagas </strong></a></li>
-            <li><hr></li>
-            <li> <a class="dropdown-item text-danger" th:href="@{/usuario/deletar/{id}(id=${usuario.id})}"> Deletar Perfil </a></li>
+            <li><a class="dropdown-item" th:href="@{/usuario/profile/{id}(id=${usuario.id})}"> Gerenciar Perfil </a></li>     
+
           </ul>
         </li>
                     </ul>
@@ -80,7 +78,7 @@
                     <p class="text-center mt-3">Inicie um curso para habilitar o seu progresso</p>
                     
                     <div class="d-flex justify-content-center">
-                    <a th:href="@{/usuario/cursos}">						
+                    <a th:href="@{/usuario/cursos/{id}(id=${usuario.id})}">						
 						<button type="button"
                             class="btn btn-success mt-4">Continuar</button></a>
                     </div>
@@ -163,7 +161,7 @@
                             </p>
                             <small class="text-body-secondary">Adicionado há 02 semanas</small> <br>
                             <div class="d-flex justify-content-center">
-                                <a href="../templates/emprego.html"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
+                                <a th:href="@{/usuario/cursos/{id}(id=${usuario.id})}"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
                             </div>
                         </div>
                     </div>
@@ -180,7 +178,7 @@
                             </p>
                             <small class="text-body-secondary">Adicionado há 02 semanas</small> <br>
                             <div class="d-flex justify-content-center">
-                                <a href="../templates/emprego.html"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
+                               <a th:href="@{/usuario/cursos/{id}(id=${usuario.id})}"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
                             </div>
                         </div>
                     </div>
@@ -197,7 +195,7 @@
                             </p>
                             <small class="text-body-secondary">Adicionado há 02 semanas</small> <br>
                             <div class="d-flex justify-content-center">
-                                <a href="../templates/emprego.html"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
+                                <a th:href="@{/usuario/cursos/{id}(id=${usuario.id})}"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
                             </div>
                         </div>
                     </div>
@@ -214,8 +212,7 @@
                             </p>
                             <small class="text-body-secondary">Adicionado há 02 semanas</small> <br>
                             <div class="d-flex justify-content-center">
-                                <a href="../templates/emprego.html"><button type="button" class="btn btn-success mt-4">Ver
-                                        detalhes</button></a>
+<a th:href="@{/usuario/cursos/{id}(id=${usuario.id})}"><button type="button" class="btn btn-success mt-4">Aplicar Vaga</button></a>
                             </div>
                         </div>
                     </div>

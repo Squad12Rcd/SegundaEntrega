@@ -13,116 +13,75 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title> ConnectJob - Home </title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-light">
-      <div class="container-fluid bg-nav box">
-        <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" th:src="@{/img/2.png}" alt="logo do projeto"
-            width="150" height="100"></a>
-        <button class="navbar-toggler bg-light text-success" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav m-auto me-3 mb-2 mb-lg-0 fs-5 gap-4  ">
-            <li class="nav-item">
-              <a class="nav-link active t " href="#">Home</a>
-            </li>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-light text-center">
+            <div class="container-fluid bg-nav box">
+                <a class="navbar-brand" href="#"><img class="img-fluid st teste-img" th:src="@{/img/2.png}"
+                        alt="logo do projeto" width="150" height="100"></a>
+                <button class="navbar-toggler bg-light text-success" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto me-3 mb-2 mb-lg-0 fs-5 gap-4  ">
+                        <li class="nav-item">
+                            <a class="nav-link active t " href="#">Home</a>
+                        </li>      
+  
+                        <li class="nav-item">
+                            <a class="nav-link t" href="#contatos"> Contatos </a>
+                        </li>
+                        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-success" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Meu Perfil
+          </a>
+          <ul class="dropdown-menu text-center">
+            <li><a class="dropdown-item" th:href="@{/empresa/perfilEmpresa/{id}(id=${empresa.id})}"> Gerenciar Perfil </a></li> 
 
-            <li class="nav-item">
-              <a class="nav-link t" th:href="@{/order/list}"> Vaga </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link t" th:href="@{contatos}">  Contatos </a>
-            </li>
           </ul>
-          <div class="d-flex">
-            <a th:href="@{/vaga/cadastro}" class="btn btn-light btn-outline-success rounded-pill"> Cadastrar vaga </a>
+        </li>
+                    </ul>            
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <main class="container">
+
+  <h1 class="text-center text-success mt-5"> Boas vindas, <span th:text="${empresa.nome}"></span>!</h1>
+ 
+  <div class="text-center mt-5">
+            <a th:href="@{/empresa/perfilEmpresa/{id}(id=${empresa.id})}" class="btn btn-light btn-outline-success rounded-pill"> Gerenciar Perfil </a>            
           </div>
+          <div>
+			  
+          <section class="mb-5 mt-5 p-5 container d-flex flex-column" id="contatos">
+            <p class="fs-3 text-center">Precisa de ajuda? Entre em contato conosco!</p>
+            <div class="mb-3 ">
+                <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                <input type="text" class="form-control focus-ring " id="exampleFormControlInput1" placeholder="Digite o seu nome">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+                <input type="email" class="form-control focus-ring " id="exampleFormControlInput1"
+                    placeholder="Digite seu melhor e-mail">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+                <textarea class="form-control focus-ring " id="exampleFormControlTextarea1" rows="3"
+                    placeholder="Digite sua mensagem"></textarea>
+            </div>
+            <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-success">Enviar</button>
         </div>
-      </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-
-    <div class="container">
-  <h1 class=" text-center text-success mt-5"> Seja bem-vindo! </h1>
-  
-  		<div class="container shadow" th:if="${usuario != null}"> 
-
-	<ul class="list-group list-group-flush" th:each="empresa : ${empresa}">
-  <li class="list-group-item"><strong>Id:</strong> <span th:text="${empresa.id}"></span></li>
-  <li class="list-group-item"><strong>Nome:</strong> <span th:text="${empresa.nome}"></span></li>
-  <li class="list-group-item"><strong>Cpf:</strong> <span th:text="${empresa.cnpj}"> </li>
-  <li class="list-group-item"><strong>E-mail:</strong> <span th:text="${empresa.email}"></li>
-</ul>	
-		</div>
-  
-  <h3 class="text-center"> Suas Vagas</h3>
-    </div>
-
-</section>
-<section class="d-flex row row-cols-md-2 row-cols-sm-1 p-3 " id="vagas">
-<div class="col-sm col-md">
-    <div class="box-vagas shadow">
-        <p class="fs-4 md-5 fw-bolder">Angular Developer TC Engenharia - São Paulo</p>
-        <p>
-			
-			<div class="container"> 
-
-			<ul class="list-group list-group-flush" th:each="vaga : ${vaga}">
-		  	<li class="list-group-item"><strong>Id:</strong> <span th:text="${vaga.id}"></span></li>
-		  	<li class="list-group-item"><strong>Nome da vaga:</strong> <span th:text="${vaga.titulo}"></span></li>
-		  	<li class="list-group-item"><strong>Descrição da Vaga:</strong> <span th:text="${vaga.descricao}"> </li>
-		  	<li class="list-group-item"><strong>Quantidade de vaga:</strong> <span th:text="${vaga.quantidade}"></li>
-</ul>
-			
-            10 Vagas disponiveis! <br>
-            Requisitos: <br>
-            - Mais de 5 anos de experiência trabalhando como desenvolvedor. <br>
-            - 2+ anos de experiência em Angular 2+. <br>
-            - Experiência em desenvolvimento de aplicações utilizando pilha de tecnologia Angular/Java. <br>
-            - Sólida experiência com HTML, CSS e escrita de código compatível com vários navegadores.<br>
-            - Forte conhecimento de técnicas de manipulação de Dom AJAX e JavaScript.<br>
-            - Experiência com MSSQL e/ou PostgreSQL<br>
-            - Experiência com React é um diferencial.<br>
-            - Nível avançado de inglês.<br>
-        </p>
-        <div class="d-flex gap-3 justify-content-center">
-        <button type="button" class="btn btn-success btn-sm">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm">Excluir</button> 
-        </div>
-    </div>
-</div>
-<div class="col-sm col-md">
-    <div class="box-vagas shadow">
-        <p class="fs-4 fw-bolder">Estagio Boticario - Rio de Janeiro (Hibrido)</p>
-           10 Vagas disponiveis! <br>
-            Requisitos: <br>
-            - Mais de 5 anos de experiência trabalhando como desenvolvedor. <br>
-            - 2+ anos de experiência em Angular 2+. <br>
-            - Experiência em desenvolvimento de aplicações utilizando pilha de tecnologia Angular/Java. <br>
-            - Sólida experiência com HTML, CSS e escrita de código compatível com vários navegadores.<br>
-            - Forte conhecimento de técnicas de manipulação de Dom AJAX e JavaScript.<br>
-            - Experiência com MSSQL e/ou PostgreSQL<br>
-            - Experiência com React é um diferencial.<br>
-            - Nível avançado de inglês.<br>
-        </p>
-        
-        <div class="d-flex gap-3 justify-content-center">
-        <button type="button" class="btn btn-success btn-sm">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm">Excluir</button> 
-        </div> 
-
-</section>
-
-</main>
+          </section>
+  </main>
   
         <footer id="footer" class="mt-5">
 
@@ -162,9 +121,10 @@
             </p>
         </div>
     </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,7 +1,5 @@
 package com.connectjob.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.connectjob.model.Empresa;
-import com.connectjob.model.Usuario;
 import com.connectjob.services.EmpresaServices;
-import com.connectjob.utils.SenhaUtils;
+
+
 
 @Controller
 @RequestMapping("/empresa")
@@ -23,25 +21,16 @@ public class EmpresaController {
 	@Autowired
 	private EmpresaServices empresaServices;
 	
-	//Home Empresa
+
 	@GetMapping("/home/{id}")
 	public String HomeEmpresa (@PathVariable Long id, Model model) {
 		Empresa empresaLocalizada =  empresaServices.getEmpresaById(id);		
-		model.addAttribute("empresa", empresaLocalizada);
-		return "perfilEmpresa";
+		model.addAttribute("empresa", empresaLocalizada);		
+		
+			return "HomeEmpresa";	
+		
 	}
-	
-	//Listar (ESSE NÃO FUNCIONA MAIS)
-	
-	@GetMapping("/listar")
-	public String listarEmpresas(Model model) {
-		List<Empresa> empresa = empresaServices.getAllEmpresa();
 
-		model.addAttribute("empresa", empresa);		
-		return "perfilempresa";
-	}
-	
-	// PERFIL DA EMPRESA
 	@GetMapping("/perfilEmpresa/{id}")
 	public String perfilempresa(@PathVariable Long id, Model model) {
 		Empresa empresaLocalizada = empresaServices.getEmpresaById(id);
@@ -49,8 +38,7 @@ public class EmpresaController {
 		return "perfilEmpresa";
 	}
 	
-	
-	//Formulario de cadastro
+
 	@GetMapping("/cadastro")
 	public String formCadastroEmpresa(Model model) {
 		Empresa empresa = new Empresa();
@@ -58,15 +46,14 @@ public class EmpresaController {
 		return "cadastro-empresa";
 	}
 		
-	//inserir dados do cadastro no banco de dados
+
 	@PostMapping("/cadastrar")
-	public String cadastrarUsuario(@ModelAttribute("empresa") Empresa empresa) {	
+	public String cadastrarEmpresa(@ModelAttribute("empresa") Empresa empresa) {	
 		empresaServices.saveEmpresa(empresa);					
-		return "perfilempresa";
-	}
+		return "/HomeEmpresa";
+	}		
 	
-	
-	//formulario de ediçao
+
 	@GetMapping("editar/{id}")
 	public String formEditarEmpresa(@PathVariable Long id, Model model) {
 		Empresa empresa = empresaServices.getEmpresaById(id);
@@ -74,14 +61,14 @@ public class EmpresaController {
 		return "editarempresa";
 	}
 	
-	//inserir dados do update no banco de dados
+
 	@PostMapping("/editar/{id}")
 	public String editarEmpresa(@PathVariable Long id, @ModelAttribute("empresa") Empresa empresa) {
 		empresaServices.updateEmpresa(id, empresa);
-		return "perfilempresa";
+		return "/HomeEmpresa";
 	}
 
-	//deletar empresa
+
 	@GetMapping("/deletar/{id}")
 	public String deletarEmpresa(@PathVariable Long id) {
 		empresaServices.deleteEmpresa(id);

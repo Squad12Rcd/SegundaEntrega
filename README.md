@@ -2,7 +2,7 @@
 Projeto desenvolvido em Java utilizando Spring Boot e modelado em MVC
 
 <div align="center">
-<img src="https://github.com/Squad12Rcd/squad12/blob/1b0d9a13ed050a50b096b333abccd234003da010/img/2.png">
+<img src="https://github.com/Squad12Rcd/squad12/blob/c0fcc9da502be57301a3394fb189bfc3d4f7c33b/img/2-PhotoRoom.png">
 </div>
 
 <p> O ConnectJob visa conectar o estudante de baixa renda ao conhecimento em tecnologia e oportunidades de trabalho na área.

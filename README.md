@@ -38,9 +38,19 @@ O projeto tem como proposta levar conhecimento em áreas de tecnologia para os e
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" width="150" height="50" /> 
 </div>
 
-<h2> Execução do projeto </h2>
+<h2> Banco de dados </h2>
 
 <li> Para executar o Banco de dados: utilizar o comando <strong> CREATE DATABASE connectjob; </strong> </li>
+
+<h3> Modelos do banco </h3>
+
+<div align="center">
+<strong> Modelo Conceitual</strong><br>
+<img src="https://github.com/Squad12Rcd/squad12/blob/eeae6d77f022d5507924492b0515370f9d982444/img/modeloCondeitual.jpeg" /> <br>
+<strong> Modelo Lógico </strong> <br>
+<img src="https://github.com/Squad12Rcd/squad12/blob/main/img/modeloLogico.jpeg" />
+</div>
+
 
 
 <h2> Colaboradores </h2>

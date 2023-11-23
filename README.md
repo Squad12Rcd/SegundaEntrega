@@ -38,9 +38,12 @@ O projeto tem como proposta levar conhecimento em áreas de tecnologia para os e
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" width="150" height="50" /> 
 </div>
 
-<h2> Banco de dados </h2>
+<h2> Instruções para execução do projeto </h2>
 
-<li> Para executar o Banco de dados: utilizar o comando <strong> CREATE DATABASE connectjob; </strong> </li>
+<ol> 
+    <li> <strong> Para executar o Banco de dados: </strong> utilizar o comando <strong> CREATE DATABASE connectjob; </strong> </li>
+    <li> <strong> Executando o projeto via IDE: </strong> ao executar a aplicação será aberta uma página para autenticação que tem o USERNAME como "user" e o PASSWORD se encontra disponível no console da IDE  </li>
+</ol>
 
 <h3> Modelos do banco </h3>
 
